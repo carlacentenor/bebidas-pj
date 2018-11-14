@@ -17,6 +17,9 @@
 
 .adicional {
   color: #898988;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 40px auto 30px 80px 1fr;
 
   .adicional__name {
     font-size: 20px;
@@ -42,27 +45,8 @@
   }
 
 
-
-  .adicional--height-detail2 {
-    height: 125px;
-
-    @media (max-width: 340px) {
-      height: 150px;
-    }
-  }
-
-  .adicional--height-detail3 {
-    height: 150px;
-
-    @media (max-width: 340px) {
-      height: 175px;
-    }
-  }
 }
 
-.adicional__heigth {
-  height: 225px;
-}
 
 .detail {
   margin: 0 1em;
@@ -86,35 +70,6 @@
   }
 }
 
-
-.heightDescription--1 {
-  height: 70px;
-}
-
-.heightDescription--2 {
-  height: 130px;
-
-  @media (min-width: 341px) {
-    height: 125px;
-  }
-
-}
-
-.heightDescription--3 {
-  height: 175px;
-
-  @media (min-width: 341px) {
-    height: 150px;
-  }
-}
-
-.heightDescription--4 {
-  height: 230px;
-
-  @media (min-width: 341px) {
-    height: 180px;
-  }
-}
 
 
 /* The container */
@@ -196,3 +151,40 @@
   } 
 }
 
+.container-button {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr;
+  text-align: center;
+}
+
+
+#bebidas {
+  text-align: center;
+  gap: 30px 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 1fr;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.item {
+  padding: 8px
+}
+  
+.adicional-item {
+  color: #898988;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 55px auto 30px 1fr 40px;
+  align-items: center;
+}
+
+.botones {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 1fr
+}
