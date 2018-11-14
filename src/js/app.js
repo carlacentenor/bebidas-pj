@@ -64,53 +64,26 @@ document.addEventListener('click', (event) => {
 // Función que inserta los valores con el estilo determinado de acuerdo a la cantidad de palabras que tenga la descripción
 const templateProducts = (element, container) => {
   const boxContainer = container;
-  let templateSelect = '';
-  let heightDescription = '';
-  if (element.description.split(' ').length <= 6) {
-    heightDescription = 'heightDescription--1';
-  } else if (element.description.split(' ').length > 6 && element.description.split(' ').length <= 10) {
-    heightDescription = 'heightDescription--2';
-  } else if (element.description.split(' ').length > 10 && element.description.split(' ').length <= 15) {
-    heightDescription = 'heightDescription--3';
-  } else {
-    heightDescription = 'heightDescription--4';
-  }
+  let templateSelect = ' ';
 
-  const template = `<div class="col-6 pt-2 mb-3">
-<div class="mb-2">
-  <p class="mb-0 adicional__name text-center">${element.name}</p>
-  <div class="">
-    <img class="img-fluid" src=${element.image}>
-  </div>
-  <p class="text-center mb-0 adicional__name">S/${element.price}</p>
-  <div  class="${heightDescription}">
-    <p class="text-center mb-3">${element.description} </p>
-  </div>
- 
-  <div class="template-select text-center p-1">
-    ${templateSelect}
-  </div>
-  <div class="row">
-    <div class="col-4 offset-1 text-right">
-      <button class=" decrement adicional__button"  id="${element.id}decrement">
-        <i class="fas fa-minus"></i>
-      </button>
+  const template = ` <div class="adicional-item">
+  <div>
+    <div class="title">
+      <p class="mb-0 adicional__name text-center">${element.name}</p>
     </div>
-    <div class="col-2 text-center adicional__number-span" id=${element.id}>0</div>
-    <div class="col-4">
-      <button class="increment adicional__button"  id="${element.id}aument">
-        <i class="fas fa-plus"></i>
-      </button>
-    </div>
+  </div>
+  <div><img class="img-fluid" src="${element.image}"></div>
+  <div><p class="text-center mb-0 adicional__name">S/ ${element.price}</p></div>
+  <div> <p class="adicional--font14 text-center mb-2">${element.description}</p></div>
+  <div class="botones">
+    <div><button class="decrement adicional__button" id="${element.id}decrement"> <i class="fas fa-minus"></i></button></div>
+    <div class="text-center adicional__number-span" id=${element.id}${element.name}>0</div>
+    <div><button class="increment adicional__button"  id="${element.id}aument"><i class="fas fa-plus"></i></button></div>
   </div>
   
-
-</div>
 </div>`;
   boxContainer.innerHTML += template;
 };
-
-
 
 const { bebidas } = data.products;
 
@@ -118,6 +91,3 @@ const { bebidas } = data.products;
 bebidas.forEach((element) => {
   templateProducts(element, containerBebidas);
 });
-
-
-
